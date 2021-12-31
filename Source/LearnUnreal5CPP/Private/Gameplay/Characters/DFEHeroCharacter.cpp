@@ -51,7 +51,7 @@ ADFEHeroCharacter::ADFEHeroCharacter()
 void ADFEHeroCharacter::Attack()
 {
 	if(!GetCharacterMovement()->IsMovementInProgress())
-	{
+	{		
 		if(ActionAttack)
 		{
 			if(bIsAttacking)

@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "DFECharacterBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCharacterDeathSignature);
+
 UCLASS(Abstract, NotBlueprintable)
 class LEARNUNREAL5CPP_API ADFECharacterBase : public ACharacter
 {
@@ -14,6 +16,8 @@ class LEARNUNREAL5CPP_API ADFECharacterBase : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ADFECharacterBase();
+
+	FOnCharacterDeathSignature OnDeath;
 
 protected:
 	// Called when the game starts or when spawned
@@ -26,7 +30,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	virtual void ExecuteDeath();
+	virtual void ExecuteDeath();	
 	
-
 };

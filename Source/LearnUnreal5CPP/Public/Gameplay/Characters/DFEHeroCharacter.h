@@ -6,6 +6,8 @@
 #include "Gameplay/Characters/DFECharacterBase.h"
 #include "DFEHeroCharacter.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDecayWardLostSignature);
+
 /**
  * 
  */
@@ -50,4 +52,6 @@ public:
 	void QueueCombo();
 	void ResetCombo();
 	void ExecuteAttack();
+
+	FOnDecayWardLostSignature OnWardLost;
 };
